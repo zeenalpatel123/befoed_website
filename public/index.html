@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/icomoon.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+    <style>
+        .tab-main.active {
+            display: block;
+            transform: scale(1);
+        }
+        .tab-main{
+            transition: 0.5s all;
+            transform:scale(0);
+        }
+        button{
+            transition: 0.3s width all;
+        }
+        button.active {
+            color: #2B50ED;
+            border-color: #fff;
+        }
+
+        input[type="checkbox"] {
+            appearance: none; /* Removes default styling */
+            width: 20px;
+            height: 20px;
+            border: 2px solid #CBD4E1; /* Custom border color */
+            border-radius: 4px; /* Optional: rounded corners */
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+<body>
+    <header class="py-5 lg:py-6 xl:py-7 relative">
+        <div class="warrper">
+            <div class="flex items-center justify-between">
+                <a href="#">
+                    <img src="assets/images/logo.png" class="max-w-40 lg:max-w-48 xl:max-w-full" alt="logo"/>
+                </a>
+                <ul class="hidden lg:flex items-center space-x-10 xl:space-x-14">
+                    <li>
+                        <a href="#" class="text-16 xl:text-18 font-semibold text-black inline-block anim hover:text-primary">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-16 xl:text-18 font-semibold text-black inline-block anim hover:text-primary">About Us</a>
+                    </li>
+                    <li class="relative group">
+                        <div class="flex items-center space-x-1.5">
+                            <a href="#" class="text-16 xl:text-18 font-semibold text-black inline-block anim group-hover:text-primary">Courses</a>
+                            <span class="icon-down_aroplain group-hover:rotate-180 text16 group-hover:text-primary anim"></span>
+                        </div>
+                        <div class="bg-white shadow-shadow_1 absolute w-44 top-9 -left-11 border border-gray_3 rounded-[10px] overflow-hidden invisible group-hover:visible anim">
+                            <ul class="space-y-3 py-1.5">
+                                <li>
+                                    <a href="#" class="text-16 font-normal text-black inline-block capitalize px-5 py-1.5">All Courses</a>
+                                </li>
+                                <li class="hover:bg-gray_2">
+                                    <a href="#" class="text-16 font-normal text-black inline-block capitalize px-5 py-1.5">IELTS</a>
+                                </li>
+                                <li class="hover:bg-gray_2">
+                                    <a href="#" class="text-16 font-normal text-black inline-block capitalize px-5 py-1.5">pTE</a>
+                                </li>
+                                <li class="hover:bg-gray_2">
+                                    <a href="#" class="text-16 font-normal text-black inline-block capitalize px-5 py-1.5">duolingo</a>
+                                </li>
+                                <li class="hover:bg-gray_2">
+                                    <a href="#" class="text-16 font-normal text-black inline-block capitalize px-5 py-1.5">TOEFL</a>
+                                </li>
+                                <li class="hover:bg-gray_2">
+                                    <a href="#" class="text-16 font-normal text-black inline-block capitalize px-5 py-1.5">gRE</a>
+                                </li>
+                                <li class="hover:bg-gray_2">
+                                    <a href="#" class="text-16 font-normal text-black inline-block capitalize px-5 py-1.5">gMAT</a>
+                                </li>
+                                <li class="hover:bg-gray_2">
+                                    <a href="#" class="text-16 font-normal text-black inline-block capitalize px-5 py-1.5">sAT</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="text-16 xl:text-18 font-semibold text-black inline-block anim hover:text-primary">Overseas Education</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-16 xl:text-18 font-semibold text-black inline-block anim hover:text-primary">Blog</a>
+                    </li>
+                </ul>
+                <div class="flex items-center space-x-3">
+                    <button class="btn_primary hidden sm:flex items-center space-x-3 lg:space-x-4 xl:space-x-5 group">
+                        <span>Contact Us</span>
+                        <div class="w-7 h-7 lg:w-8 lg:h-8 xl:w-10 xl:h-10 rounded-full bg-white group-hover:bg-primary flex items-center justify-center call_bg">
+                            <span class="icon-contact text18 text-black group-hover:text-white"></span>
+                        </div>
+                    </button>
+                    <span class="icon-menu text-black font-medium text-34 block lg:hidden" onclick="toggleActive('#open','-translate-x-full');"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <aside class="w-full fixed bg-black/30 inset-0 backdrop-blur-sm h-screen block lg:hidden z-50" id="open">
+        <div class="w-full max-w-96 h-screen bg-white">
+            <div class="p-5 flex items-center justify-between border-b-2 border-secondary">
+                <a href="#">
+                    <img src="assets/images/logo.png" class="max-w-40" alt="logo"/>
+                </a>
+                <span class="icon-close text-24 font-bold" onclick="toggleActive('#open','-translate-x-full');"></span>
+            </div>
+            <ul class="text-center space-y-7 p-5">
+                <li>
+                    <a href="#" class="inline-block text-26 font-bold text-secondary">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="inline-block text-26 font-bold text-secondary">About Us</a>
+                </li>
+                <li>
+                    <div class="title_tab mb-3">
+                        <a href="#" class="inline-block text-26 font-bold text-secondary">Courses</a>
+                        <!-- <span class="icon-down"></span> -->
+                    </div>
+                    <div class="bg-white border border-gray_3 rounded-[10px] p-3 inner_content">
+                        <ul class="space-y-2.5">
+                            <li>
+                                <a href="#" class="text-20 text-secondary font-semibold capitalize">All Courses</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-20 text-secondary font-semibold capitalize">IELTS</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-20 text-secondary font-semibold capitalize">pTE</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-20 text-secondary font-semibold capitalize">duolingo</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-20 text-secondary font-semibold capitalize">TOEFL</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-20 text-secondary font-semibold capitalize">gRE</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-20 text-secondary font-semibold capitalize">gMAT</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-20 text-secondary font-semibold capitalize">sAT</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="inline-block text-26 font-bold text-secondary">Overseas Education</a>
+                </li>
+                <li>
+                    <a href="#" class="inline-block text-26 font-bold text-secondary">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <section class="relative -z-10">
+        <div class="warrper relative z-10">
+            <div class="w-full py-56" >
+                <div class="mb-7 lg:mb-10 xl:mb-12 max-w-[774px] mx-auto text-center">
+                    <span class="inline-block text-white h3 mb-1.5 xl:mb-2.5">BEFOED - Beyond Foreign Education</span>
+                    <h1 class="text-white capitalize mb-5 md:mb-8 lg:mb-10 xl:mb-12">We are making <br class="hidden xl:block"> a significant investment in your path to success.</h1>
+                    <button class="btn_primary cursor-pointer">Get Started Your Journey</button>
+                </div>
+            </div>
+        </div>
+        <img src="assets/images/banner_bg.png" class="absolute inset-0 w-full h-full object-cover" alt="home_bg"/>
+    </section>
+    <section class="bg-gradient-to-r from-b1 to-b2 sticky top-0 z-20">
+        <div class="warrper">
+            <div class="py-6 flex flex-wrap items-center justify-center space-x-7">
+                <div>
+                    <h3 class="h3 text-white inline-block mr-2.5">Search Courses</h3>
+                    <input type="search" placeholder="Course I University I Country I State" class="border-b bg-transparent outline-none text-[#85B7D7] placeholder:text-[#85B7D7]">
+                </div>
+                <div>
+                    <h3 class="h3 text-white inline-block mr-2.5">Intake</h3>
+                    <span class="text-16 text-[#85B7D7] font-normal">January- December</span>
+                </div>
+                <div>
+                    <h3 class="h3 text-white inline-block mr-2.5">Year</h3>
+                    <span class="text-16 text-[#85B7D7] font-normal">2024-25</span>
+                </div>
+                <div>
+                    <h3 class="h3 text-white inline-block mr-2.5">State</h3>
+                    <span class="text-16 text-[#85B7D7] font-normal">Gujarat</span>
+                </div>
+                <div class="flex items-center space-x-5 hidden">
+                    <div class="w-full">
+                        <button class="flex items-center space-x-2.5 btn_secondary up_down">
+                            <span class="icon-search text24 text-[#94A3B8]"></span>
+                            <span>Advance Search </span>
+                        </button>
+                        <div class="bg-[#F3F4F6] down rounded-2xl p-7 w-full absolute left-1/2 -translate-x-1/2 -bottom-[170px] max-w-[1589px]">
+                            <form class="flex flex-wrap -mx-3">
+                                <div class="w-full md:w-1/2 lg:w-3/12 p-3">
+                                    <label class="text20 text-[#0F172A] font-medium block mb-4">Program Level</label>
+                                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-[#94A3B8] flex items-center justify-between bg-white w-full font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
+                                        <span class="text16 font-normal text-[#94A3B8]">Select</span>
+                                        <span class="icon-down text16 text-black"></span> 
+                                    </button>
+                                    <div id="dropdown" class="z-10 bg-white hidden py-4 px-3 mt-2 rounded-lg shadow-shadow_4 w-fullbg-white">
+                                        <ul class="py-2 space-y-2.5" aria-labelledby="dropdownDefaultButton">
+                                            <li class="flex items-center space-x-3">
+                                                <input id="1" name="program_level" type="checkbox"/>
+                                                <label for="1" class="text-gray_1 text-16 font-normal">High School (11th - 12th)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="2" class="text-gray_1 text-16 font-normal">UG Diploma/ Certificate/ Associate
+                                                    Degree</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="3" class="text-gray_1 text-16 font-normal">UG</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="4" class="text-gray_1 text-16 font-normal">PG Diploma/Certificate</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="5" class="text-gray_1 text-16 font-normal">PG</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="6" class="text-gray_1 text-16 font-normal">UG+PG (Accelerated) Degree</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="7" class="text-gray_1 text-16 font-normal">PhD</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="8" class="text-gray_1 text-16 font-normal">Foundation</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="9" class="text-gray_1 text-16 font-normal">Short Term Programs</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="10" class="text-gray_1 text-16 font-normal">Pathway Programs</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="" class="text-gray_1 text-16 font-normal">Twinning Programmes (UG)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="11" class="text-gray_1 text-16 font-normal">Twinning Programmes (PG)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="12" class="text-gray_1 text-16 font-normal">English Language Program</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="13" class="text-gray_1 text-16 font-normal">Online Programmes Distance
+                                                    Learning</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>  
+                                <div class="w-full md:w-1/2 lg:w-2/12 p-3">
+                                    <label class="text20 text-[#0F172A] font-medium block mb-4">Country</label>
+                                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-[#94A3B8] flex items-center justify-between bg-white w-full font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
+                                        <span class="text16 font-normal text-[#94A3B8]">Select</span>
+                                        <span class="icon-down text16 text-black"></span> 
+                                    </button>
+                                    <div id="dropdown" class="z-10 hidden bg-white py-4 px-3 mt-2 rounded-lg shadow-shadow_4 w-fullbg-white">
+                                        <ul class="py-2 space-y-2.5" aria-labelledby="dropdownDefaultButton">
+                                            <li class="flex items-center space-x-3">
+                                                <input id="1" name="program_level" type="checkbox"/>
+                                                <label for="1" class="text-gray_1 text-16 font-normal">High School (11th - 12th)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="2" class="text-gray_1 text-16 font-normal">UG Diploma/ Certificate/ Associate
+                                                    Degree</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="3" class="text-gray_1 text-16 font-normal">UG</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="4" class="text-gray_1 text-16 font-normal">PG Diploma/Certificate</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="5" class="text-gray_1 text-16 font-normal">PG</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="6" class="text-gray_1 text-16 font-normal">UG+PG (Accelerated) Degree</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="7" class="text-gray_1 text-16 font-normal">PhD</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="8" class="text-gray_1 text-16 font-normal">Foundation</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="9" class="text-gray_1 text-16 font-normal">Short Term Programs</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="10" class="text-gray_1 text-16 font-normal">Pathway Programs</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="" class="text-gray_1 text-16 font-normal">Twinning Programmes (UG)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="11" class="text-gray_1 text-16 font-normal">Twinning Programmes (PG)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="12" class="text-gray_1 text-16 font-normal">English Language Program</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="13" class="text-gray_1 text-16 font-normal">Online Programmes Distance
+                                                    Learning</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>                            
+                                <div class="w-full md:w-1/2 lg:w-2/12 p-3">
+                                    <label class="text20 text-[#0F172A] font-medium block mb-4">Study Area</label>
+                                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-[#94A3B8] flex items-center justify-between bg-white w-full font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
+                                        <span class="text16 font-normal text-[#94A3B8]">Select</span>
+                                        <span class="icon-down text16 text-black"></span> 
+                                    </button>
+                                    <div id="dropdown" class="z-10 hidden bg-white py-4 px-3 mt-2 rounded-lg shadow-shadow_4 w-fullbg-white">
+                                        <ul class="py-2 space-y-2.5" aria-labelledby="dropdownDefaultButton">
+                                            <li class="flex items-center space-x-3">
+                                                <input id="1" name="program_level" type="checkbox"/>
+                                                <label for="1" class="text-gray_1 text-16 font-normal">High School (11th - 12th)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="2" class="text-gray_1 text-16 font-normal">UG Diploma/ Certificate/ Associate
+                                                    Degree</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="3" class="text-gray_1 text-16 font-normal">UG</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="4" class="text-gray_1 text-16 font-normal">PG Diploma/Certificate</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="5" class="text-gray_1 text-16 font-normal">PG</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="6" class="text-gray_1 text-16 font-normal">UG+PG (Accelerated) Degree</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="7" class="text-gray_1 text-16 font-normal">PhD</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="8" class="text-gray_1 text-16 font-normal">Foundation</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="9" class="text-gray_1 text-16 font-normal">Short Term Programs</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="10" class="text-gray_1 text-16 font-normal">Pathway Programs</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="" class="text-gray_1 text-16 font-normal">Twinning Programmes (UG)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="11" class="text-gray_1 text-16 font-normal">Twinning Programmes (PG)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="12" class="text-gray_1 text-16 font-normal">English Language Program</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="13" class="text-gray_1 text-16 font-normal">Online Programmes Distance
+                                                    Learning</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                                <div class="w-full md:w-1/2 lg:w-2/12 p-3">
+                                    <label class="text20 text-[#0F172A] font-medium block mb-4">Discipline Area</label>
+                                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-[#94A3B8] flex items-center justify-between bg-white w-full font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
+                                        <span class="text16 font-normal text-[#94A3B8]">Select</span>
+                                        <span class="icon-down text16 text-black"></span> 
+                                    </button>
+                                    <div id="dropdown" class="z-10 hidden bg-white py-4 px-3 mt-2 rounded-lg shadow-shadow_4 w-fullbg-white">
+                                        <ul class="py-2 space-y-2.5" aria-labelledby="dropdownDefaultButton">
+                                            <li class="flex items-center space-x-3">
+                                                <input id="1" name="program_level" type="checkbox"/>
+                                                <label for="1" class="text-gray_1 text-16 font-normal">High School (11th - 12th)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="2" class="text-gray_1 text-16 font-normal">UG Diploma/ Certificate/ Associate
+                                                    Degree</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="3" class="text-gray_1 text-16 font-normal">UG</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="4" class="text-gray_1 text-16 font-normal">PG Diploma/Certificate</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="5" class="text-gray_1 text-16 font-normal">PG</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="6" class="text-gray_1 text-16 font-normal">UG+PG (Accelerated) Degree</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="7" class="text-gray_1 text-16 font-normal">PhD</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="8" class="text-gray_1 text-16 font-normal">Foundation</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="9" class="text-gray_1 text-16 font-normal">Short Term Programs</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="10" class="text-gray_1 text-16 font-normal">Pathway Programs</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="" class="text-gray_1 text-16 font-normal">Twinning Programmes (UG)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="11" class="text-gray_1 text-16 font-normal">Twinning Programmes (PG)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="12" class="text-gray_1 text-16 font-normal">English Language Program</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="13" class="text-gray_1 text-16 font-normal">Online Programmes Distance
+                                                    Learning</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                                <div class="w-full md:w-1/2 lg:w-3/12 p-3">
+                                    <label class="text20 text-[#0F172A] font-medium block mb-4">Exam</label>
+                                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-[#94A3B8] flex items-center justify-between bg-white w-full font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
+                                        <span class="text16 font-normal text-[#94A3B8]">Select</span>
+                                        <span class="icon-down text16 text-black"></span> 
+                                    </button>
+                                    <div id="dropdown" class="z-10 hidden bg-white py-4 px-3 mt-2 rounded-lg shadow-shadow_4 w-fullbg-white">
+                                        <ul class="py-2 space-y-2.5" aria-labelledby="dropdownDefaultButton">
+                                            <li class="flex items-center space-x-3">
+                                                <input id="1" name="program_level" type="checkbox"/>
+                                                <label for="1" class="text-gray_1 text-16 font-normal">High School (11th - 12th)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="2" class="text-gray_1 text-16 font-normal">UG Diploma/ Certificate/ Associate
+                                                    Degree</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="3" class="text-gray_1 text-16 font-normal">UG</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="4" class="text-gray_1 text-16 font-normal">PG Diploma/Certificate</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="5" class="text-gray_1 text-16 font-normal">PG</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="6" class="text-gray_1 text-16 font-normal">UG+PG (Accelerated) Degree</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="7" class="text-gray_1 text-16 font-normal">PhD</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="8" class="text-gray_1 text-16 font-normal">Foundation</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="9" class="text-gray_1 text-16 font-normal">Short Term Programs</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="10" class="text-gray_1 text-16 font-normal">Pathway Programs</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="" class="text-gray_1 text-16 font-normal">Twinning Programmes (UG)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="11" class="text-gray_1 text-16 font-normal">Twinning Programmes (PG)</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="12" class="text-gray_1 text-16 font-normal">English Language Program</label>
+                                            </li>
+                                            <li class="flex items-center space-x-3">
+                                                <input type="checkbox"/>
+                                                <label for="13" class="text-gray_1 text-16 font-normal">Online Programmes Distance
+                                                    Learning</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>  
+                            </form>
+                        </div>
+                    </div>
+                    <button class="flex items-center space-x-2.5 btn_secondary">
+                        <span class="icon-search text24 text-[#94A3B8]"></span>
+                        <span>Search </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-10 md:py-12 lg:py-16 xl:py-20">
+        <div class="warrper">
+            <div class="flex flex-wrap items-center -mx-3.5">
+                <div class="w-full md:w-1/2 p-3.5">
+                    <img src="assets/images/about.png" class="mx-auto max-w-56 md:max-w-72 lg:max-w-sm xl:max-w-full" alt="overview_1"/>
+                </div>
+                <div class="w-full md:w-1/2 p-3.5">
+                    <span class="inline-block h3 mb-1.5 xl:mb-2.5">About Us</span>
+                    <h2 class="mb-3 lg:mb-4 xl:mb-5">We are making a significant investment in your path to success.</h2>
+                    <p class="pra_text mb-4 md:mb-5 lg:mb-6 xl:mb-7">Since 2016, BEFOED - Beyond Foreign Education has stood as a prominent advisor for individuals aspiring to pursue careers abroad. Our highly skilled team provides reliable assistance, recruiting students for 500+ universities worldwide, spanning the United States, Canada, Australia, New Zealand, the United Kingdom, Dubai, Ireland, and various European and Asian nations. Tailoring options to academic and professional needs, we've successfully guided over 5000 students. Notably, we are proud to state that we are actively recruiting students from 16 different countries across South Asia, Middle East and South East Asia, and Africa. BEFOED - Beyond Foreign Education is dedicated to growth and excellence in the upcoming 5 years.</p>
+                    <button class="btn_primary">View More Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pb-10 md:pb-12 lg:pb-16 xl:pb-20">
+        <div class="warrper">
+            <div class="mb-5 md:mb-8 lg:mb-10 xl:mb-12">
+                <span class="inline-block h3 mb-1.5 xl:mb-2.5">Our Process</span>
+                <h2>The Roadmap to Your Future Starts Here</h2>
+            </div>
+            <div class="flex flex-wrap -mx-2">
+                <div class="w-1/2 xs:w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 xl:max-w-52 p-2 h-auto">
+                    <div class="bg-white px-4 py-3 lg:px-5 lg:py-4 xl:px-6 xl:py-5 border-[3px] border-gray_2 rounded-xl md:rounded-2xl xl:rounded-[20px] h-full">
+                        <img src="assets/images/1.png" class="max-w-6 lg:max-w-8 xl:max-w-full mx-auto" alt="1"/>
+                        <h4 class="text18 text-black font-medium text-center mt-3.5">Expert Counselling Service</h4>
+                    </div>
+                </div>
+                <div class="w-1/2 xs:w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 xl:max-w-52 p-2 h-auto">
+                    <div class="bg-white px-4 py-3 lg:px-5 lg:py-4 xl:px-6 xl:py-5 border-[3px] border-gray_2 rounded-xl md:rounded-2xl xl:rounded-[20px] h-full">
+                        <img src="assets/images/2.png" class="max-w-6 lg:max-w-8 xl:max-w-full mx-auto" alt="1"/>
+                        <h4 class="text18 text-black font-medium text-center mt-3.5">International Test Preparation</h4>
+                    </div>
+                </div>
+                <div class="w-1/2 xs:w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 xl:max-w-52 p-2 h-auto">
+                    <div class="bg-white px-4 py-3 lg:px-5 lg:py-4 xl:px-6 xl:py-5 border-[3px] border-gray_2 rounded-xl md:rounded-2xl xl:rounded-[20px] h-full">
+                        <img src="assets/images/3.png" class="max-w-6 lg:max-w-8 xl:max-w-full mx-auto" alt="1"/>
+                        <h4 class="text18 text-black font-medium text-center mt-3.5">Submission of Application to Institutes</h4>
+                    </div>
+                </div>
+                <div class="w-1/2 xs:w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 xl:max-w-52 p-2 h-auto">
+                    <div class="bg-white px-2 py-3 lg:px-2.5 lg:py-4 xl:px-3 xl:py-5 border-[3px] border-gray_2 rounded-xl md:rounded-2xl xl:rounded-[20px] h-full">
+                        <img src="assets/images/4.png" class="max-w-6 lg:max-w-8 xl:max-w-full mx-auto" alt="1"/>
+                        <h4 class="text18 text-black font-medium text-center mt-3.5">Guidance on accepting the admission offers</h4>
+                    </div>
+                </div>
+                <div class="w-1/2 xs:w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 xl:max-w-52 p-2 h-auto">
+                    <div class="bg-white px-4 py-3 lg:px-5 lg:py-4 xl:px-6 xl:py-5 border-[3px] border-gray_2 rounded-xl md:rounded-2xl xl:rounded-[20px] h-full">
+                        <img src="assets/images/5.png" class="max-w-6 lg:max-w-8 xl:max-w-full mx-auto" alt="1"/>
+                        <h4 class="text18 text-black font-medium text-center mt-3.5">Financial Guidance</h4>
+                    </div>
+                </div>
+                <div class="w-1/2 xs:w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 xl:max-w-52 p-2 h-auto">
+                    <div class="bg-white px-4 py-3 lg:px-5 lg:py-4 xl:px-6 xl:py-5 border-[3px] border-gray_2 rounded-xl md:rounded-2xl xl:rounded-[20px] h-full">
+                        <img src="assets/images/6.png" class="max-w-6 lg:max-w-8 xl:max-w-full mx-auto" alt="1"/>
+                        <h4 class="text18 text-black font-medium text-center mt-3.5">Assistance on Visa filing</h4>
+                    </div>
+                </div>
+                <div class="w-1/2 xs:w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 xl:max-w-52 p-2 h-auto">
+                    <div class="bg-white px-4 py-3 lg:px-5 lg:py-4 xl:px-6 xl:py-5 border-[3px] border-gray_2 rounded-xl md:rounded-2xl xl:rounded-[20px] h-full">
+                        <img src="assets/images/7.png" class="max-w-6 lg:max-w-8 xl:max-w-full mx-auto" alt="1"/>
+                        <h4 class="text18 text-black font-medium text-center mt-3.5">Pre & Post departure service</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pb-10 md:pb-12 lg:pb-16 xl:pb-20">
+        <div class="warrper">
+            <div class="mb-3 md:mb-4 xl:mb-5">
+                <h2 class="h2 capitalize max-w-md">Make Your Choice for the
+                    Preferred Nation</h2>
+            </div>
+            <div>
+                <ul class="bg-white overflow-x-auto tab-holder shadow-shadow_2 px-8 sm:px-9 md:px-10 lg:px-12 xl:px-14 rounded-full w-full max-w-[1134px] flex items-center space-x-10 justify-between">
+                    <li class="relative">
+                        <a href="javascript:void(0)" class="text-gray_1 hover:text-secondary text-16 lg:text-18 font-medium py-3 text-nowrap inline-block anim" data-tab="tab-1">Europe
+                        </a>
+                        <!-- <span class="icon-up_aroplain text-30 text-primary"></span> -->
+                    </li>
+                    <li class="relative">
+                        <a href="javascript:void(0)" class="text-gray_1 hover:text-secondary text-16 lg:text-18 font-medium py-3 text-nowrap inline-block anim" data-tab="tab-2">North America</a>
+                    </li>
+                    <li class="relative">
+                        <a href="javascript:void(0)" class="text-gray_1 hover:text-secondary text-16 lg:text-18 font-medium py-3 text-nowrap inline-block anim" data-tab="tab-3">Asea</a>
+                    </li>
+                    <li class="relative">
+                        <a href="javascript:void(0)" class="text-gray_1 hover:text-secondary text-16 lg:text-18 font-medium py-3 text-nowrap inline-block anim" data-tab="tab-4">Latin America</a>
+                    </li>
+                    <li class="relative">
+                        <a href="javascript:void(0)" class="text-gray_1 hover:text-secondary text-16 lg:text-18 font-medium py-3 text-nowrap inline-block anim" data-tab="tab-5">Ocenia</a>
+                    </li>
+                    <li class="relative">
+                        <a href="javascript:void(0)" class="text-gray_1 hover:text-secondary text-16 lg:text-18 font-medium py-3 text-nowrap inline-block anim" data-tab="tab-6">Africa</a>
+                    </li>
+                </ul>
+                <div class="w-full mt-12">
+                    <div id="tab-1" class="tab-main hidden active">
+                        <div class="flex flex-wrap items-center -mx-1">
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/belgium.png" alt="belgium"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/belgium_cont.png" alt="belgium"/>
+                                        <span class="inline-block text-b4 font-medium text18">Belgium</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/denmark.png" alt="denmark"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/denmark_cont.png" alt="contry3"/>
+                                        <span class="inline-block text-b4 font-medium text18">Denmark </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/greece.png" alt="greece"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/greece_cont.png" alt="greece_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Greece</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/hungary.png" alt="hungary"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/hungary_con.png" alt="hungary_con"/>
+                                        <span class="inline-block text-b4 font-medium text18">Hungary</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/iceland.png" alt="iceland"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/iceland_con.png" alt="iceland_con"/>
+                                        <span class="inline-block text-b4 font-medium text18">Iceland
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/ireland.png" alt="ireland"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/ireland_cont.png" alt="ireland_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Ireland</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/france_tab5.png" alt="france_tab5"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/france_cont.png" alt="france_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">France</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/germany_tab6.png" alt="germany_tab6"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/germany_cont.png" alt="germany_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Germany</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/italy.png" alt="italy"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/italy_cont.png" alt="italy_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Italy</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/luxembourg.png" alt="luxembourg"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/luxembourg_cont.png" alt="luxembourg_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Luxembourg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/netherlands.png" alt="netherlands"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/netherlands_cont.png" alt="netherlands_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Netherlands</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/spain.png" alt="spain"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/spain_cont.png" alt="spain_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Spain</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-2" class="tab-main hidden">
+                        <div class="flex flex-wrap items-center -mx-1">
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/canada_tab1.png" alt="canada_tab1"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/canada_cont.png" alt="canada_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Canada</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/united_states.png" alt="united_states"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/united_states_cont.png" alt="united_states_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">United States</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/mexico.png" alt="mexico"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/mexico_cont.png" alt="mexico_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Mexico</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/belize.png" alt="belize"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/belize_cont.png" alt="mexico_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Belize</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/costa_rica.png" alt="costa_rica"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/costa_rica_cont.png" alt="costa_rica_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Costa Rica</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/cuba.png" alt="cuba"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/cuba_cont.png" alt="cuba_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Cuba</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/panama.png" alt="panama"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/panama_cont.png" alt="panama_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Panama</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/guatemala.png" alt="guatemala"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/guatemala_cont.png" alt="guatemala_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Guatemala</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/jamaica.png" alt="jamaica"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/jamaica_cont.png" alt="jamaica_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Jamaica</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/haiti.png" alt="haiti"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/haiti_cont.png" alt="haiti_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Haiti</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/dominican_republic.png" alt="dominican_republic"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/dominican_republic_cont.png" alt="dominican_republic_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Dominican Republic</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/ei_salvador.png" alt="ei_salvador"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/el_salvador_cont.png" alt="el_salvador_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">El Salvador</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-3" class="tab-main hidden">
+                        <div class="flex flex-wrap items-center -mx-1">
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/china.png" alt="china"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/china_cont.png" alt="china_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">China</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/india.png" alt="india"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/india_cont.png" alt="india_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">India</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/japan.png" alt="japan"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/japan_cont.png" alt="japan_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Japan</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/south_korea.png" alt="south_korea"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/south_korea_cont.png" alt="south_korea_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">South Korea</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/indonesia.png" alt="indonesia"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/indonesia_cont.png" alt="indonesia_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Indonesia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/pakistan.png" alt="pakistan"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/pakistan_cont.png" alt="pakistan_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Pakistan</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/bangladesh.png" alt="bangladesh"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/bangladesh_cont.png" alt="bangladesh_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Bangladesh</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/philippines.png" alt="philippines"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/philippines_cont.png" alt="philippines_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Philippines</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/vietnam.png" alt="vietnam"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/vietnam_cont.png" alt="vietnam_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Vietnam</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/thailand.png" alt="thailand"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/thailand_cont.png" alt="thailand_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Thailand</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/malaysia.png" alt="malaysia"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/malaysia_cont.png" alt="malaysia_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Malaysia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/singapore.png" alt="singapore"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/singapore_cont.png" alt="singapore_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Singapore</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-4" class="tab-main hidden">
+                        <div class="flex flex-wrap items-center -mx-1">
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/argentina.png" alt="argentina"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/argentina_cont.png" alt="argentina_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Argentina</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/brazil.png" alt="brazil"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/brazil_cont.png" alt="brazil_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Brazil</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/guyana.png" alt="guyana"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/guyana_cont.png" alt="guyana_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Guyana</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/chile.png" alt="chile"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/chile_cont.png" alt="chile_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Chile</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/colombia.png" alt="colombia"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/colombia_cont.png" alt="colombia_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Colombia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/mexico.png" alt="mexico"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/mexico_cont.png" alt="mexico_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Mexico</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/peru.png" alt="peru"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/peru_cont.png" alt="peru_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Peru</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/venezuela.png" alt="venezuela"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/venezuela_cont.png" alt="venezuela_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Venezuela</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/ecuador.png" alt="ecuador"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/ecuador_cont.png" alt="ecuador_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Ecuador</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/bolivia.png" alt="bolivia"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/bolivia_cont.png" alt="bolivia_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Bolivia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/paraguay.png" alt="paraguay"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/paraguay_cont.png" alt="paraguay_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Paraguay</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/uruguay.png" alt="uruguay"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/uruguay_cont.png" alt="uruguay_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Uruguay</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-5" class="tab-main hidden">
+                        <div class="flex flex-wrap items-center -mx-1">
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/australia.png" alt="australia"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/australia_cont.png" alt="australia_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Australia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/australia.png" alt="australia"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/new_zealand_cont.png" alt="new_zealand_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">New Zealand</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/papua_new_guinea.png" alt="papua_new_guinea"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/papua_new_guinea_cont.png" alt="papua_new_guinea_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Papua New Guinea</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/fiji.png" alt="fiji"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/fiji_cont.png" alt="fiji_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Fiji</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/samoa.png" alt="samoa"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/samoa_cont.png" alt="samoa_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Samoa</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/tonga.png" alt="tonga"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/tonga_cont.png" alt="tonga_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Tonga</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/vanuatu.png" alt="vanuatu"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/vanuatu_cont.png" alt="vanuatu_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Vanuatu</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/solomon_islands.png" alt="solomon_islands"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/solomon_islands_cont.png" alt="solomon_islands_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Solomon Islands</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/kiribati.png" alt="kiribati"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/kiribati_cont.png" alt="kiribati_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Kiribati</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/nauru.png" alt="nauru"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/nauru_cont.png" alt="nauru_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Nauru</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/tuvalu.png" alt="tuvalu"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/tuvalu_cont.png" alt="tuvalu_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Tuvalu</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/marshall_islands.png" alt="marshall_islands"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/marshall_islands_cont.png" alt="marshall_islands_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Marshall Islands</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-6" class="tab-main hidden">
+                        <div class="flex flex-wrap items-center -mx-1">
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/nigeria.png" alt="nigeria"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/nigeria_cont.png" alt="nigeria_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Nigeria</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/egypt.png" alt="egypt"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-1 sm:py-2 px-1.5 sm:px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/egypt_cont.png" alt="egypt_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Egypt</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/south_africa.png" alt="south_africa"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-2 px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/south_africa_cont.png" alt="south_africa_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">South Africa</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/kenya.png" alt="kenya"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-2 px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/kenya_cont.png" alt="kenya_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Kenya</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/uganda.png" alt="uganda"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-2 px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/uganda_cont.png" alt="uganda_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Uganda</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/ghana.png" alt="ghana"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-2 px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/ghana_cont.png" alt="ghana_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Ghana</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/tanzania.png" alt="tanzania"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-2 px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/tanzania_cont.png" alt="tanzania_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Tanzania</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/algeria.png" alt="algeria"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-2 px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/algeria_cont.png" alt="algeria_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Algeria</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/morocco.png" alt="morocco"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-2 px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/morocco_cont.png" alt="morocco_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Morocco</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/sudan.png" alt="sudan"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-2 px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/sudan_cont.png" alt="sudan_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Sudan</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/ethiopia.png" alt="ethiopia"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-2 px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/ethiopia_cont.png" alt="ethiopia_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Ethiopia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
+                                <div class="relative">
+                                    <img src="assets/images/rwanda.png" alt="rwanda"/>
+                                    <div class="absolute top-2.5 left-2.5 bg-white py-2 px-2.5 flex items-center space-x-2 rounded-full">
+                                        <img src="assets/images/rwanda_cont.png" alt="rwanda_cont"/>
+                                        <span class="inline-block text-b4 font-medium text18">Rwanda</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pb-10 md:pb-12 lg:pb-16 xl:pb-20">
+        <div class="warrper">
+            <div class="mb-5 md:mb-8 lg:mb-10 xl:mb-12">
+               <h2 class="mb-3 lg:mb-4 xl:mb-5">We Help You to Unlock Your Potentials</h2> 
+               <p class="pra_text max-w-[615px]">We have established ourselves as one of the academic institution among our students, with over 25 years of expertise and experienced personnel.</p>
+            </div>
+            <div class="flex flex-wrap -mx-3.5">
+                <div class="w-full sm:w-1/2 md:w-1/3 p-3.5">
+                    <div class="flex justify-between mb-2.5">
+                        <span class="text-black text18 font-medium">Practical Knowledge</span>
+                        <span class="text-primary text18 font-medium">85%</span>
+                      </div>
+                      <div class="w-full bg-gray_2 rounded h-5">
+                        <div class="bg-primary h-5 rounded" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 md:w-1/3 p-3.5">
+                    <div class="flex justify-between mb-2.5">
+                        <span class="text-black text18 font-medium">Passed Percentage</span>
+                        <span class="text-primary text18 font-medium">90%</span>
+                      </div>
+                      <div class="w-full bg-gray_2 rounded h-5">
+                        <div class="bg-[#719BE6] h-5 rounded" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 md:w-1/3 p-3.5">
+                    <div class="flex justify-between mb-2.5">
+                        <span class="text-black text18 font-medium">Happy Students</span>
+                        <span class="text-primary text18 font-medium">95%</span>
+                      </div>
+                      <div class="w-full bg-gray_2 rounded h-5">
+                        <div class="bg-[#C8D7F0] h-5 rounded" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pb-10 md:pb-12 lg:pb-16 xl:pb-20">
+        <div class="warrper bg-gray_2 pt-14">
+            <div class="text-center">
+                <div class="mb-5 md:mb-8 lg:mb-10 xl:mb-12">
+                    <h2 class="mb-3 md:mb-4 lg:mb-5 xl:mb-6">Explore Our Courses</h2>
+                    <p class="pra_text  max-w-[732px] mx-auto capitalize mb-3 md:mb-4 lg:mb-5 xl:mb-6">Unlock a world of opportunities with our diverse range of courses tailored to your aspirations. From top-ranked universities to specialized fields of study, find programs that align with your career goals. Start your global education journey with expert guidance every step of the way.</p>
+                    <button class="btn_primary">View More Details</button>
+                </div>
+                <img src="assets/images/course.png" alt="course"/>
+            </div>
+        </div>
+    </section>
+    <section class="pb-10 md:pb-12 lg:pb-16 xl:pb-20">
+        <div class="warrper">
+            <div class="text-center mb-5 md:mb-8 lg:mb-10 xl:mb-12">
+                <h2 class="max-w-md capitalize mx-auto">Our Most Watched and Loved Videos</h2>
+            </div>
+            <div class="swiper mySwiper hidden">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <video class="w-60 h-[433px] mx-auto" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="swiper-slide">
+                    <video class="w-60 h-[433px] mx-auto" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="swiper-slide">
+                    <video class="w-60 h-[433px] mx-auto" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="swiper-slide">
+                    <video class="w-60 h-[433px] mx-auto" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="swiper-slide">
+                    <video class="w-60 h-[433px] mx-auto" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="swiper-slide">
+                    <video class="w-60 h-[433px] mx-auto" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="swiper-slide">
+                    <video class="w-60 h-[433px] mx-auto" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="swiper-slide">
+                    <video class="w-60 h-[433px] mx-auto" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="swiper-slide">
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            <div class="flex flex-wrap -mx-1.5 hidden">
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1.5">
+                    <video class="w-60 h-[433px]" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1.5">
+                    <video class="w-60 h-[433px]" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1.5">
+                    <video class="w-60 h-[433px]" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1.5">
+                    <video class="w-60 h-[433px]" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1.5">
+                    <video class="w-60 h-[433px]" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1.5">
+                    <video class="w-60 h-[433px]" controls>
+                        <source src="assets/images/reels.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn_primary mt-4 md:mt-5 lg:mt-6 xl:mt-7">Watch All Videos</button>
+            </div>
+        </div>
+    </section>
+    <section class="py-5 sm:py-7 md:py-9 xl:py-11 bg-gray_2">
+        <div class="w-full max-w-[942px] px-5 mx-auto">
+            <div class="max-w-md mx-auto text-center mb-5 md:mb-8 lg:mb-10 xl:mb-12">
+                <h2 class="h2">Global Accreditations & Recognitions</h2>
+            </div>
+            <div class="flex flex-wrap -mx-1">
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 p-1 h-auto">
+                    <div class="bg-white rounded-xl md:rounded-2xl xl:rounded-[20px] shadow-shadow_2 py-4 px-3 sm:py-6 sm:px-4 h-full">
+                        <img src="assets/images/recognitions_1.png" class="mx-auto" alt="recognitions_1"/>
+                    </div>
+                </div>
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 p-1 h-auto">
+                    <div class="bg-white flex items-center  rounded-xl md:rounded-2xl xl:rounded-[20px] shadow-shadow_2 py-4 px-3 sm:py-6 sm:px-4 h-full">
+                        <img src="assets/images/recognitions_2.png" class="mx-auto" alt="recognitions_1"/>
+                    </div>
+                </div>
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 p-1 h-auto">
+                    <div class="bg-white flex items-center  rounded-xl md:rounded-2xl xl:rounded-[20px] shadow-shadow_2 py-4 px-3 sm:py-6 sm:px-4 h-full">
+                        <img src="assets/images/recognitions_3.png" class="mx-auto" alt="recognitions_1"/>
+                    </div>
+                </div>
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 p-1 h-auto">
+                    <div class="bg-white flex items-center  rounded-xl md:rounded-2xl xl:rounded-[20px] shadow-shadow_2 py-4 px-3 sm:py-6 sm:px-4 h-full">
+                        <img src="assets/images/recognitions_4.png" class="mx-auto" alt="recognitions_1"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>     
+    <section class="py-10 md:py-12 lg:py-16 xl:py-20 hidden">
+        <div class="warrper">
+            <div class="absolute left-1/2 -translate-x-1/2 z-10 pt-10 md:pt-12 lg:pt-16 xl:pt-20">
+                <h2 class="capitalize max-w-80 mx-auto text-center">What students say about us</h2>
+                <div class="mt-5 md:mt-8 lg:mt-10 xl:mt-12">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <img src="assets/images/about_us1.png" alt="about_us1"/>
+                          </div>
+                          <div class="swiper-slide">
+                            <img src="assets/images/about_us1.png" alt="about_us1"/>
+                          </div>
+                          <div class="swiper-slide">
+                            <img src="assets/images/about_us1.png" alt="about_us1"/>
+                          </div>
+                          <div class="swiper-slide">
+                            <img src="assets/images/about_us1.png" alt="about_us1"/>
+                          </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <img src="assets/images/dot_bg.png" class="relative" alt="dot_bg"/>
+    </section>  
+    <section>
+        <div class="warrper space-y-5 md:space-y-8 lg:space-y-10 xl:space-y-12">
+            <div>
+                <h2 class="text-center">Our Success Stories</h2>
+            </div>
+            <div class="flex flex-wrap -mx-2">
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 p-2">
+                    <img src="assets/images/success1.png" alt="success1"/>
+                </div>
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 p-2">
+                    <img src="assets/images/success2.png" alt="success2"/>
+                </div>
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 p-2">
+                    <img src="assets/images/success3.png" alt="success3"/>
+                </div>
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 p-2">
+                    <img src="assets/images/success4.png" alt="success4"/>
+                </div>
+                <div class="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 p-2">
+                    <img src="assets/images/success5.png" alt="success5"/>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn_primary">Explore more</button>
+            </div>
+        </div>
+    </section> 
+    <section class="py-10 md:py-12 lg:py-16 xl:py-20">
+        <div class="w-full max-w-[1004px] px-5 mx-auto relative z-10">
+            <div class="bg-gradient-to-r from-b1 to-b2 py-6 px-5 md:py-8 md:px-6 xl:py-10 xl:px-7 relative overflow-hidden">
+                <div class=" text-center relative z-10">
+                    <h2 class="text-white mb-1.5 md:mb-2.5">Ready to collaborate?</h2>
+                    <p class="text16 text-white mb-2.5 xl:mb-4 capitalize max-w-[804px] mx-auto">Join Beyond Foreign Education in shaping the future of aspiring students. Collaborate with us to create impactful opportunities and expand access to global education. Let’s work together to make dreams a reality!</p>
+                    <button class="px-4 xl:px-6 py-2.5 xl:py-3 text-14 lg:text-16 xl:text-18 font-semibold border bg-white text-b4 rounded-[10px]">Become a Partner</button>
+                </div>
+                <img src="assets/images/right_img.png" class="absolute h-full top-0 right-0" alt="right_img"/>
+                <img src="assets/images/left_img.png" class="absolute bottom-0.5 left-0 hidden sm:block" alt="left_img"/>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        $('.tab-holder li a').click(function () {
+        var tab_id = $(this).attr('data-tab');
+        $('.tab-holder li a').removeClass('active');
+        $('.tab-main').removeClass('active');
+        $(this).addClass('active');
+        $("#" + tab_id).addClass('active');
+        });
+        });
+ 
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+        });
+
+        $(document).ready(function(){
+        $(".down").click(function(){
+        $(".up_down").slideDown();
+        });
+        });
+
+        var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    //   autoplay: {
+    //     delay: 2500,
+    //     disableOnInteraction: false,
+    //   },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 50,
+        },
+      },
+    });
+
+        function toggleActive(Id, db) {
+        var element = document.querySelector(Id);
+        element.classList.toggle(db);
+        }
+
+        $(function() {
+            $('.inner_content').slideUp();
+            $('.title_tab.active').next().slideDown();
+            $('.title_tab').click(function(j) {   
+            if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $('.title_tab').removeClass('active');
+            $(this).next().slideUp();
+            }
+            else {
+            $('.title_tab').removeClass('active');
+            $('.inner_content').slideUp();
+            $(this).addClass('active');
+            $(this).next().slideDown();
+            }     
+            });
+            });
+        
+        // AOS.init();
+    </script>
+</body>
+</html>

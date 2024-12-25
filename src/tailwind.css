@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Syne:wght@400..800&display=swap');
+@tailwind base;
+*{@apply font-syne;}
+.warrper{@apply w-full max-w-screen-2xl px-5 mx-auto;}
+.anim{@apply transition-all duration-300;}
+.h1,h1{@apply text-28 sm:text-38 lg:text-48 xl:text-52 font-bold text-black;}
+.h3,h3{@apply text-18 lg:text-20 xl:text-24 font-medium text-secondary;}
+.h2,h2{@apply text-22 lg:text-28 xl:text-34 font-medium text-black;}
+.pra_text{@apply text-12 lg:text-14 xl:text-16 font-normal text-gray_1;}
+.text16{@apply text-14 xl:text-16;}
+.text18{@apply text-14 lg:text-16 xl:text-18;}
+.text20{@apply text-16 lg:text-18 2xl:text-20;}
+.text24{@apply text-18 lg:text-20 xl:text-24;}
+.btn_primary{@apply p-2.5 xl:p-3 text-14 lg:text-16 xl:text-18 font-semibold border border-primary bg-primary text-white rounded-[10px] hover:bg-transparent hover:text-primary hover:border-primary anim;}
+.btn_secondary{@apply p-2.5 xl:p-3 text-14 lg:text-16 xl:text-18 font-semibold border border-white bg-white text-b4 rounded-[10px] hover:bg-transparent hover:text-white hover:border-white anim;}
+
+/* scrollbar  */
+*::-webkit-scrollbar {
+    scrollbar-width: auto;
+    width: 12px;
+    height: 13px;
+    cursor: pointer;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #3C51A0;
+    border-radius: 1000px;
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+*::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+footer ul li::marker {
+    color: white;
+  }
+
+
+@tailwind components;
+@tailwind utilities;
